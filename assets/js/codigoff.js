@@ -199,7 +199,7 @@ function chequeoVidas() {
     botonPared.disabled = true;
 
     let sectionReinicio = document.getElementById("reiniciar-juego");
-    sectionReinicio.style.display = "block";
+    sectionReinicio.style.display = "flex";
   } else if (vidaJugador == 0) {
     alert("Mejor suerte para la pócima");
     pBooyah.innerHTML = "SOS FRANCES";
@@ -212,7 +212,7 @@ function chequeoVidas() {
     botonPared.disabled = true;
 
     let sectionReinicio = document.getElementById("reiniciar-juego");
-    sectionReinicio.style.display = "block";
+    sectionReinicio.style.display = "flex";
   } else if (vidaEnemigo == 0) {
     alert("BOOYAH!!");
     pBooyah.innerHTML = "BOOYAH!!";
