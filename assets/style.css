@@ -22,28 +22,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: aliceblue;
+    background-color: skyblue;
 }
 #ataques{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: antiquewhite;
+    background-color: skyblue;
 }
 #texto-personajes{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: antiquewhite;
+    background-color: skyblue;
 }
 #reiniciar-juego{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: antiquewhite;
+    background-color: skyblue;
 }
 #reinicio{
     display: flex;
