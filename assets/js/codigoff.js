@@ -20,6 +20,8 @@ function empezarJuego() {
   sectionTextop.style.display = "none";
   let sectionReinicio = document.getElementById("reiniciar-juego");
   sectionReinicio.style.display = "none";
+  let sectionSelectButton = document.getElementById("select-button");
+  sectionSelectButton.style.display = "flex";
   pJugador.style.display = "none";
   pEnemigo.style.display = "none";
 
@@ -31,10 +33,8 @@ function empezarJuego() {
 
   let botonGranada = document.getElementById("granada-jugador");
   botonGranada.addEventListener("click", escapar);
-
   let botonPared = document.getElementById("tirar-pared");
   botonPared.addEventListener("click", ponerPared);
-
   let botonReinicio = document.getElementById("reinicio");
   botonReinicio.addEventListener("click", reiniciar);
 }
@@ -81,6 +81,9 @@ function SelectEnemy() {
   sectionAtaques.style.display = "flex";
   let sectionTextop = document.getElementById("texto-personajes");
   sectionTextop.style.display = "flex";
+  let sectionSelectButton = document.getElementById("select-button");
+  sectionSelectButton.style.display = "none";
+
   pJugador.style.display = "flex";
   pEnemigo.style.display = "flex";
   pJugador.innerHTML = "Tu PV: " + vidaJugador;

@@ -1,56 +1,117 @@
-#by{
-    color: aliceblue;
-}
-#homenaje{
-font-size: larger;
-color: azure;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 #juego{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-repeat: no-repeat;
+    font-family: 'Righteous', cursive;
+}
 
+#by{
+    color: aliceblue;
 }
 #encabezado{
-    display: flex-start;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 .title{
-    color: #ff0055;
+    color: #d2ff3f;
     height: 63px;
     width: 313px;
-    background-color: aqua;
     font-size: -webkit-xxx-large;
-    font-style: ;
+}
+#homenaje{
+font-size: larger;
+color: azure;
 }
 #seleccionar-personaje{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: skyblue;
+    color: orange;
+}
+.select{
+    display: flex;
+    flex-direction: column;
+    
+}
+.select-jugador{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 130px;
+    height: 50px;
+    padding: 5px;
+    border: 1px solid blue;
+    margin: 10px;
+    background-color: #e1004b;
+}
+
+.select-jugador:hover{
+    background-color: chartreuse;
 }
 #ataques{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: skyblue;
     font-weight: bolder;
+    color: #ffffff;
 }
-#botones{
+#personaje-select{
+    display: flex;
+    color: #ff000f;
+    font-size: large;
+}
+#personaje{
+    display: flex;
+    color: #ffffff;
+    font-size: large;
+    justify-content: flex-end;
+}
+#enemigo-select{
+    display: flex;
+    color: #ff000f;
+    font-size: large;
+}
+#personaje-enemigo{
+    display: flex;
+    color: #ffffff;
+    font-size: large;
+    justify-content: flex-end;
+}
+
+.botones{
     display: flex;
     flex-direction: column;
+    height: 30px;
+    width: 136px;
     justify-content: center;
     align-items: center;
-    background-color: skyblue;
-    font-weight: bolder;
-
+    background-color: #04fff3;
+}
+.botones:hover{
+    background-color:gold;
+}
+#Seleccionar{
+    display: flex;
+    flex-direction: column;
+    height: 64px;
+    width: 182px;
+    margin: 20px;
+    border: 2px solid navy;
+    justify-content: center;
+    align-items: center;
+    background-color: #04fff3;
+    font-size: larger;
+    font-family: 'Righteous', cursive;
 }
 #texto-personajes{
     display: flex;
@@ -64,7 +125,6 @@ color: azure;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: skyblue;
 }
 #reinicio{
     display: flex;
@@ -76,4 +136,7 @@ color: azure;
     height: 50px;
     width: 243px;
     font-size: large;
+}
+input{
+    display: none;
 }
