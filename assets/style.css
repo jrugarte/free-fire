@@ -4,7 +4,6 @@ color: azure;
 }
 
 #juego{
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,6 +37,15 @@ color: azure;
     align-items: center;
     background-color: skyblue;
     font-weight: bolder;
+}
+#botones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: skyblue;
+    font-weight: bolder;
+
 }
 #texto-personajes{
     display: flex;
