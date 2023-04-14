@@ -52,6 +52,7 @@
     align-items: center;
     background-color: red;
     color: black;
-    height: 63px;
-    width: 313px;
+    height: 50px;
+    width: 243px;
+    font-size: large;
 }
