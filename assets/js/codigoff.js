@@ -51,15 +51,15 @@ function SelectPlayer() {
 
   if (Jotaerre.checked) {
     //.innerHTML hace que podamos darle un valor a lo que hay en el span indicado anteriormente, en este caso con un condicional
-    spanPersonaje.innerHTML = "L4F~Jotaerre";
+    spanPersonaje.innerHTML = " L4F~Jotaerre";
   } else if (Juanserino.checked) {
-    spanPersonaje.innerHTML = "L4F~Juanserino";
+    spanPersonaje.innerHTML = " L4F~Juanserino";
   } else if (Alesi.checked) {
-    spanPersonaje.innerHTML = "L4F~Alesi";
+    spanPersonaje.innerHTML = " L4F~Alesi";
   } else if (Enzinix.checked) {
-    spanPersonaje.innerHTML = "L4F~Enzinix";
+    spanPersonaje.innerHTML = " L4F~Enzinix";
   } else if (Alex.checked) {
-    spanPersonaje.innerHTML = "L4F~Alex";
+    spanPersonaje.innerHTML = " L4F~Alex";
   } else {
     alert("Por favor, selecciona un jugador.");
     jugar = 0;
@@ -93,20 +93,20 @@ function SelectEnemy() {
   enemigoAleatorioName;
 
   if (enemigoAleatorio == 1) {
-    spanEnemigo.innerHTML = "L4F~Jotaerre";
-    enemigoAleatorioName = "L4F~Jotaerre";
+    spanEnemigo.innerHTML = " L4F~Jotaerre";
+    enemigoAleatorioName = " L4F~Jotaerre";
   } else if (enemigoAleatorio == 2) {
-    spanEnemigo.innerHTML = "L4F~Juanserino";
-    enemigoAleatorioName = "L4F~Juanserino";
+    spanEnemigo.innerHTML = " L4F~Juanserino";
+    enemigoAleatorioName = " L4F~Juanserino";
   } else if (enemigoAleatorio == 3) {
-    spanEnemigo.innerHTML = "L4F~Alesi";
-    enemigoAleatorioName = "L4F~Alesi";
+    spanEnemigo.innerHTML = " L4F~Alesi";
+    enemigoAleatorioName = " L4F~Alesi";
   } else if (enemigoAleatorio == 4) {
-    spanEnemigo.innerHTML = "L4F~Enzinix";
-    enemigoAleatorioName = "L4F~Enzinix";
+    spanEnemigo.innerHTML = " L4F~Enzinix";
+    enemigoAleatorioName = " L4F~Enzinix";
   } else {
-    spanEnemigo.innerHTML = "L4F~Alex";
-    enemigoAleatorioName = "L4F~Alex";
+    spanEnemigo.innerHTML = " L4F~Alex";
+    enemigoAleatorioName = " L4F~Alex";
   }
 }
 function aleatorio(min, max) {

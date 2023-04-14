@@ -1,14 +1,11 @@
 #juego{
-    background = "/Users/junior/Downloads/garena-free-fire_.jpg";
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-
-
 #encabezado{
-    display: flex;
+    display: flex-start;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -19,8 +16,7 @@
     width: 313px;
     background-color: aqua;
     font-size: -webkit-xxx-large;
-    }
-
+}
 #seleccionar-personaje{
     display: flex;
     flex-direction: column;
@@ -48,4 +44,14 @@
     justify-content: center;
     align-items: center;
     background-color: antiquewhite;
+}
+#reinicio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: black;
+    height: 63px;
+    width: 313px;
 }
