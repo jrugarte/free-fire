@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-repeat: no-repeat;
+    background-size: 220vh;
     font-family: 'Righteous', cursive;
 }
 
@@ -19,14 +19,15 @@
     color: white;
 }
 .title{
-    color: #d2ff3f;
+    color: #00bcd4;
     height: 63px;
-    width: 313px;
+    width: 333px;
     font-size: -webkit-xxx-large;
 }
 #homenaje{
-font-size: larger;
-color: azure;
+    display: flex;
+    font-size: 12px;
+    color: azure;
 }
 #seleccionar-personaje{
     display: flex;
@@ -52,6 +53,7 @@ color: azure;
     border: 1px solid blue;
     margin: 10px;
     background-color: #e1004b;
+    border-radius: 15px;    
 }
 
 .select-jugador:hover{
@@ -91,27 +93,20 @@ color: azure;
 .botones{
     display: flex;
     flex-direction: column;
-    height: 30px;
-    width: 136px;
-    justify-content: center;
-    align-items: center;
-    background-color: #04fff3;
-}
-.botones:hover{
-    background-color:gold;
-}
-#Seleccionar{
-    display: flex;
-    flex-direction: column;
     height: 64px;
     width: 182px;
-    margin: 20px;
+    margin: 10px;
     border: 2px solid navy;
     justify-content: center;
     align-items: center;
     background-color: #04fff3;
     font-size: larger;
     font-family: 'Righteous', cursive;
+    border-radius: 15px;
+
+}
+.botones:hover{
+    background-color:gold;
 }
 #texto-personajes{
     display: flex;
@@ -125,17 +120,6 @@ color: azure;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-#reinicio{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: red;
-    color: black;
-    height: 50px;
-    width: 243px;
-    font-size: large;
 }
 input{
     display: none;
