@@ -83,6 +83,8 @@ function SelectEnemy() {
   sectionTextop.style.display = "flex";
   let sectionSelectButton = document.getElementById("select-button");
   sectionSelectButton.style.display = "none";
+  // let Titulo = document.getElementsByClassName("title");
+  // Titulo.style.display = "flex";
 
   pJugador.style.display = "flex";
   pEnemigo.style.display = "flex";

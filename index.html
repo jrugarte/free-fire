@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>FireFree</title>
     <meta charset="utf-8" />
+    <section id="titulo">
+      <h1 class="title">🔥 Fire-Free 🔥</h1>
+    </section>
 <section id ="encabezado">
   <p id="by">By: Jotaerre</p>
-
-
-    <title>FireFree</title>
     <script src="assets/js/codigoff.js"></script>
     <link rel="stylesheet" href="./assets/style.css">
   </head>
-  <body id="juego" background = "./assets/images/bg1.jpg"
-  >
-    <h1 class="title">🔥 Fire-Free 🔥</h1>
+  <body id="juego" background = "./assets/images/bg1.jpg">
     <p id="homenaje">
       Este es un homenaje a <a href="https://ffsoporte.garena.com/hc/es-419"> el juego FreeFire</a>
-  </p>
+    </p>
   
   <h2>Elige tu jugador:</h2>
 
 </section>
-
 
     <section class id="seleccionar-personaje">
     
@@ -58,6 +56,7 @@
       
 
     </section>
+
     <section id="select-button">
 
       <button class="botones" id="Seleccionar">Seleccionar</button> 
@@ -65,31 +64,30 @@
     </section>
   
 
-    
+  <section id="ataques">
 
+    <p id="personaje-select">Seleccionaste a: <strong><span id="personaje">.....</span></strong></p>
+    <p id="enemigo-select">Y vas contra: <strong><span id="personaje-enemigo">.....</span></strong></p>
+
+    <P><strong>A JUGAR!</strong></P><br>
+      <div id="div-botones">
+        <button class="botones" id="disparo-jugador">DISPARAR 🎯</button><span id="disparo"></span><br>
+        <button class="botones" id="granada-jugador">ESCAPAR 🏃🏽‍♂️</button><span id="granada"></span><br>
+        <button class="botones" id="tirar-pared">PONER PARED 🧊</button><span id="pared"></span><br>
+
+      </div>
 
   
-    
-<section id="ataques">
-
-  <p id="personaje-select">Seleccionaste a: <strong><span id="personaje">.....</span></strong></p>
-  <p id="enemigo-select">Y vas contra: <strong><span id="personaje-enemigo">.....</span></strong></p>
-
-  <P><strong>A JUGAR!</strong></P><br>
-  <p>
-    <button class="botones" id="disparo-jugador">DISPARAR 🎯</button><span id="disparo"></span><br>
-    <button class="botones" id="granada-jugador">ESCAPAR 🏃🏽‍♂️</button><span id="granada"></span><br>
-    <button class="botones" id="tirar-pared">PONER PARED 🧊</button><span id="pared"></span><br>
-  </p>
-</section>
-  <section id="texto-personajes"></section>
-
-    
+  </section>
   <section id="reiniciar-juego">
-  <p>
+  
     <button class="botones" id="reinicio">Reinicio</button>
   </section>
-  </p>
+
+  <section id="texto-personajes"> </section>
+
+    
+  
     <!-- <section id="seleccionar-habilidad"></section>
     <h3>Elige tu habilidad:</h3>
     <p>
