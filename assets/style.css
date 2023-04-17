@@ -6,6 +6,7 @@
     justify-content: center;
     background-size: 220vh;
     font-family: 'Righteous', cursive;
+    background-attachment: fixed;
 }
 
 #by{
@@ -67,9 +68,9 @@
 .select-jugador:hover{
     background-image: url(./images/bg2player.jpeg);
     cursor: pointer;
-    transition: 0.4s;
+    transition: 0.2s;
 }
-.select-jugador:checked{
+.select-jugador:valid{
     background-image: url(./images/bg2player.jpeg);
 }
 
@@ -95,23 +96,31 @@
 }
 #personaje-select{
     display: flex;
-    color: #ff000f;
+    color: #ffffff;
     font-size: large;
+    width: 280px;
+    justify-content: space-around;
+    margin: 5px;
 }
 #personaje{
     display: flex;
-    color: #ffffff;
+    color: #2fd511;
     font-size: large;
     justify-content: flex-end;
 }
 #enemigo-select{
     display: flex;
-    color: #ff000f;
+    color: #ffffff;
     font-size: large;
+    width: 280px;
+    height: 60px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px;
 }
 #personaje-enemigo{
     display: flex;
-    color: #ffffff;
+    color: #2fd511;
     font-size: large;
     justify-content: flex-end;
 }
@@ -122,7 +131,7 @@
     height: 64px;
     width: 182px;
     margin: 10px;
-    border: 2px solid #ffed00;
+    border: 2px solid #1f35b1;
     justify-content: center;
     align-items: center;
     background-color: transparent;
@@ -133,14 +142,14 @@
 
 }
 .botones:hover{
-    background-color:gold;
+    background-color:rgb(16, 197, 3);
 }
 #texto-personajes{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #ffc311;
+    background-color: #139719b5;
 }
 #reiniciar-juego{
     display: flex;
