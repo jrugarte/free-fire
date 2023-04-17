@@ -51,7 +51,7 @@ function SelectPlayer() {
 
   if (Jotaerre.checked) {
     //.innerHTML hace que podamos darle un valor a lo que hay en el span indicado anteriormente, en este caso con un condicional
-    spanPersonaje.innerHTML = " L4F~Jotaerre";
+    spanPersonaje.innerHTML = " L4F~Jotaerre ";
   } else if (Juanserino.checked) {
     spanPersonaje.innerHTML = " L4F~Juanserino";
   } else if (Alesi.checked) {

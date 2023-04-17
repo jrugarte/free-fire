@@ -37,7 +37,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    color: orange;
+    color: #FFED00;
     gap: 10px;
 }
 #seleccionar-personaje img{
@@ -52,21 +52,27 @@
 .select-jugador{
     display: flex;
     flex-direction: row;
-    justify-content: space-around   ;
+    justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    width: 220px;
-    height: 170px;
+    width: 250px;
+    height: 140px;
     padding: 5px;
     border: 1px solid blue;
     margin: 10px;
-    background-color: #e1004b;
+    background-image: url(./images/bgplayer.jpeg);
     border-radius: 15px;    
 }
 
 .select-jugador:hover{
-    background-color: chartreuse;
+    background-image: url(./images/bg2player.jpeg);
+    cursor: pointer;
+    transition: 0.4s;
 }
+.select-jugador:checked{
+    background-image: url(./images/bg2player.jpeg);
+}
+
 #ataques{
     display: flex;
     flex-direction: column;
