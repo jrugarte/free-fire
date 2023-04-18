@@ -70,9 +70,28 @@
     cursor: pointer;
     transition: 0.2s;
 }
-.select-jugador:valid{
-    background-image: url(./images/bg2player.jpeg);
+
+#Jotaerre ~ .select-jugador[for="Jotaerre"],
+#Juanserino ~ .select-jugador[for="Juanserino"],
+#Alesi ~ .select-jugador[for="Alesi"],
+#Enzinix ~ .select-jugador[for="Enzinix"],
+#Alex ~ .select-jugador[for="Alex"]
+{
+      transition: 0.2s;
 }
+
+
+#Jotaerre:checked ~ .select-jugador[for="Jotaerre"],
+#Juanserino:checked ~ .select-jugador[for="Juanserino"],
+#Alesi:checked ~ .select-jugador[for="Alesi"],
+#Enzinix:checked ~ .select-jugador[for="Enzinix"],
+#Alex:checked ~ .select-jugador[for="Alex"]
+{
+    background-image: url(./images/bg2player.jpeg);
+    cursor: pointer;
+ }
+
+ 
 
 #ataques{
     display: flex;
