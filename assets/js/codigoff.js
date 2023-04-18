@@ -24,6 +24,8 @@ function empezarJuego() {
   tuPv.style.display = "none";
   let pvEnemigo = document.getElementById("pv-enemigo");
   pvEnemigo.style.display = "none";
+  let divPv = document.getElementById("pv");
+  divPv.style.display = "none";
 
   let botonSelect = document.getElementById("Seleccionar");
   botonSelect.addEventListener("click", SelectPlayer);
