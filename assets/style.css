@@ -148,6 +148,8 @@
 .botones:hover{
     background-color:rgb(16, 197, 3);
     cursor: pointer;
+    color: #ff00c3;
+
 }
 #texto-personajes{
     display: flex;

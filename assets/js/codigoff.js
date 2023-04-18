@@ -6,7 +6,7 @@ let enemigoAleatorioName;
 let enemigoAleatorio;
 let pJugador = document.createElement("p");
 let pEnemigo = document.createElement("p");
-//primera
+
 function empezarJuego() {
   // let sectionEncabezado = document.getElementById("encabezado");
   // sectionEncabezado.style.display = "block";
@@ -30,7 +30,6 @@ function empezarJuego() {
   //aca agrego los botones de atk y def(1)
   let botonDisparo = document.getElementById("disparo-jugador");
   botonDisparo.addEventListener("click", disparar);
-
   let botonGranada = document.getElementById("granada-jugador");
   botonGranada.addEventListener("click", escapar);
   let botonPared = document.getElementById("tirar-pared");
