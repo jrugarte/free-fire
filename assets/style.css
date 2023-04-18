@@ -1,17 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Righteous&display=swap');
 #juego{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-size: 220vh;
-    font-family: 'Righteous', cursive;
+    font-family: 'Permanent Marker', cursive;
     background-attachment: fixed;
 }
-
-#by{
-    color: black;
-    font-size: 12px;
+.title{
+    color: white;
+    height: 50px;
+    width: auto;
+    font-size: 60px;
 }
 #encabezado{
     display: flex;
@@ -22,12 +23,11 @@
     font-size: 30px;
     width: -webkit-fill-available;
 }
-.title{
-    color: white;
-    height: 50px;
-    width: auto;
-    font-size: 60px;
+#by{
+    color: black;
+    font-size: 12px;
 }
+
 #homenaje{
     display: flex;
     font-size: 14px;
@@ -44,11 +44,6 @@
 #seleccionar-personaje img{
     width: 100px;
     height: 100px;
-}
-.select{
-    display: flex;
-    flex-direction: column;
-    
 }
 .select-jugador{
     display: flex;
@@ -69,9 +64,8 @@
     background-image: url(./images/bg2player.jpeg);
     cursor: pointer;
     transition: 0.2s;
+    color: #ff00c3;
 }
-
-
 
 #Jotaerre:checked ~ .select-jugador[for="Jotaerre"],
 #Juanserino:checked ~ .select-jugador[for="Juanserino"],
@@ -81,10 +75,8 @@
 {
     background-image: url(./images/bg2player.jpeg);
     cursor: pointer;
- }
-
- 
-
+    color: #ff00c3;
+}
 #ataques{
     display: flex;
     flex-direction: column;
@@ -100,11 +92,11 @@
     align-items: center;
 
 }
-.form{
+/* .form{
     display: flex;
     flex-flow: column wrap;
 
-}
+} */
 #personaje-select{
     display: flex;
     color: #ffffff;
