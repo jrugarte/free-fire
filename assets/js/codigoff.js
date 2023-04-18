@@ -4,9 +4,7 @@ let vidaJugador = 200;
 let vidaEnemigo = 200;
 let enemigoAleatorioName;
 let enemigoAleatorio;
-let pJugador = document.createElement("p");
-let pEnemigo = document.createElement("p");
-
+//primera vista de la pagina
 function empezarJuego() {
   // let sectionEncabezado = document.getElementById("encabezado");
   // sectionEncabezado.style.display = "block";
@@ -22,8 +20,10 @@ function empezarJuego() {
   sectionReinicio.style.display = "none";
   let sectionSelectButton = document.getElementById("select-button");
   sectionSelectButton.style.display = "flex";
-  pJugador.style.display = "none";
-  pEnemigo.style.display = "none";
+  let tuPv = document.getElementById("tu-pv");
+  tuPv.style.display = "none";
+  let pvEnemigo = document.getElementById("pv-enemigo");
+  pvEnemigo.style.display = "none";
 
   let botonSelect = document.getElementById("Seleccionar");
   botonSelect.addEventListener("click", SelectPlayer);
@@ -83,15 +83,12 @@ function SelectEnemy() {
   sectionTextop.style.display = "flex";
   let sectionSelectButton = document.getElementById("select-button");
   sectionSelectButton.style.display = "none";
-  // let Titulo = document.getElementsByClassName("title");
-  // Titulo.style.display = "flex";
-
-  pJugador.style.display = "flex";
-  pEnemigo.style.display = "flex";
-  pJugador.innerHTML = "Tu PV: " + vidaJugador;
-  pEnemigo.innerHTML = "PV Enemigo: " + vidaEnemigo;
-  sectionAtaques.appendChild(pJugador);
-  sectionAtaques.appendChild(pEnemigo);
+  let tuPv = document.getElementById("tu-pv");
+  tuPv.style.display = "flex";
+  let pvEnemigo = document.getElementById("pv-enemigo");
+  pvEnemigo.style.display = "flex";
+  tuPv.innerHTML = vidaJugador;
+  pvEnemigo.innerHTML = vidaEnemigo;
 
   let spanEnemigo = document.getElementById("personaje-enemigo");
   enemigoAleatorio = aleatorio(1, 5);
