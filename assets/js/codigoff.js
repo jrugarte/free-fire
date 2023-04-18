@@ -85,8 +85,9 @@ function SelectEnemy() {
   sectionSelectButton.style.display = "none";
   let tuPv = document.getElementById("tu-pv");
   tuPv.style.display = "flex";
+  let divPv = document.getElementById("pv");
+  divPv.style.display = "flex";
   let pvEnemigo = document.getElementById("pv-enemigo");
-  pvEnemigo.style.display = "flex";
   tuPv.innerHTML = vidaJugador;
   pvEnemigo.innerHTML = vidaEnemigo;
 
@@ -140,7 +141,6 @@ function ataqueEnemigoAleatorio() {
     ataqueEnemigo = "PARED";
   }
   combate();
-  // respuestaEnemigo.innerHTML = "El enemigo " + ataqueEnemigo;
 }
 
 function combate() {
@@ -154,7 +154,7 @@ function combate() {
     if (ataqueEnemigo === "DISPARO") {
       crearMensaje("Te espaldeó");
       vidaJugador = vidaJugador - 50;
-      pJugador.innerHTML = "Tu PV: " + vidaJugador;
+      tuPv.innerHTML = vidaJugador;
     }
   } else if (ataqueJugador === "PARED") {
     if (ataqueEnemigo === "ESCAPA") {
@@ -170,7 +170,7 @@ function combate() {
     if (ataqueEnemigo === "ESCAPA") {
       crearMensaje("Espaldeaste");
       vidaEnemigo = vidaEnemigo - 50;
-      pEnemigo.innerHTML = "PV Enemigo: " + vidaEnemigo;
+      pvEnemigo.innerHTML = vidaEnemigo;
     }
     if (ataqueEnemigo === "PARED") {
       crearMensaje("Zafó");
@@ -179,8 +179,8 @@ function combate() {
       crearMensaje("Pelea de mancos");
       vidaJugador = vidaJugador - 50;
       vidaEnemigo = vidaEnemigo - 50;
-      pJugador.innerHTML = "Tu PV: " + vidaJugador;
-      pEnemigo.innerHTML = "PV Enemigo: " + vidaEnemigo;
+      tuPv.innerHTML = vidaJugador;
+      pvEnemigo.innerHTML = vidaEnemigo;
     }
   }
   chequeoVidas();
