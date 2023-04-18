@@ -71,14 +71,6 @@
     transition: 0.2s;
 }
 
-#Jotaerre ~ .select-jugador[for="Jotaerre"],
-#Juanserino ~ .select-jugador[for="Juanserino"],
-#Alesi ~ .select-jugador[for="Alesi"],
-#Enzinix ~ .select-jugador[for="Enzinix"],
-#Alex ~ .select-jugador[for="Alex"]
-{
-      transition: 0.2s;
-}
 
 
 #Jotaerre:checked ~ .select-jugador[for="Jotaerre"],
