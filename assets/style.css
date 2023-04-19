@@ -173,9 +173,14 @@
     justify-content: space-between;
 }
 #ataque-jugador{
-    color:aliceblue
+    display: flex;
+  flex-flow: column-reverse;  
+  color:aliceblue
+    
 }
 #ataque-enemigo{
+    display: flex;
+    flex-flow: column-reverse;  
     color:aliceblue
 }
 #reiniciar-juego{
