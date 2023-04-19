@@ -243,8 +243,9 @@ function crearMensaje(resultado) {
   let nuevoAtaqueEnemigo = document.createElement("p");
   // le doy el contenido a cada parrafo:
   sectionMensajes.innerHTML = resultado;
-  nuevoAtaqueJugador.innerHTML = "Atacaste con:" + ataqueJugador;
-  nuevoAtaqueEnemigo.innerHTML = enemigoAleatorioName + ataqueEnemigo;
+  nuevoAtaqueJugador.innerHTML = "Atacaste con: " + ataqueJugador;
+  nuevoAtaqueEnemigo.innerHTML =
+    enemigoAleatorioName + " ataca con: " + ataqueEnemigo;
   // indico donde va cada parrafo:
   AtaqueDelJugador.appendChild(nuevoAtaqueJugador);
   AtaqueDelEnemigo.appendChild(nuevoAtaqueEnemigo);

@@ -167,6 +167,17 @@
     align-items: center;
     flex-direction: column;
 }
+#notif-ataques{
+    display: flex;
+    width: 550px;
+    justify-content: space-between;
+}
+#ataque-jugador{
+    color:aliceblue
+}
+#ataque-enemigo{
+    color:aliceblue
+}
 #reiniciar-juego{
     display: flex;
     flex-direction: column;
