@@ -92,11 +92,6 @@
     align-items: center;
 
 }
-/* .form{
-    display: flex;
-    flex-flow: column wrap;
-
-} */
 #personaje-select{
     display: flex;
     color: #ffffff;
@@ -153,16 +148,51 @@
 }
 #texto-personajes{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 450px;
+    margin: 10px;
+    padding: 10px;
+    justify-content: space-evenly;
+    color: aliceblue;
+    background-color: #1f35b1d4;
+    font-size: 20px;
+    border-radius: 20px;
+}
+#resultado{
+    display: flex;
+    margin: 5px;
+    padding: 10px;
+    justify-content: flex-start;
+    color: #57b1ff;
+    font-size: 20px;
     align-items: center;
-    background-color: #139719b5;
+    flex-direction: column;
 }
 #reiniciar-juego{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#reinicio {
+    display: flex;
+    flex-direction: column;
+    height: 64px;
+    width: 182px;
+    margin: 10px;
+    border: 2px solid #3ad606;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    font-size: 15px;
+    font-family: 'Righteous', cursive;
+    border-radius: 15px;
+    color: white;
+}
+#reinicio:hover{
+    background-color:rgb(16, 197, 3);
+    cursor: pointer;
+    color: #ff00c3;
 }
 input{
     display: none;

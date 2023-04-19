@@ -188,13 +188,13 @@ function combate() {
   chequeoVidas();
 }
 function chequeoVidas() {
-  let sectionAtaques = document.getElementById("ataques");
+  let sectionMensajes = document.getElementById("resultado");
   let pBooyah = document.createElement("p");
 
   if (vidaEnemigo == 0 && vidaJugador == 0) {
     alert("EMPATE");
-    pBooyah.innerHTML = "Al piso ambos";
-    sectionAtaques.appendChild(pBooyah);
+    pBooyah.innerHTML = "EMPATE";
+    sectionMensajes.appendChild(pBooyah);
     let botonDisparo = document.getElementById("disparo-jugador");
     botonDisparo.disabled = true;
     let botonGranada = document.getElementById("granada-jugador");
@@ -206,8 +206,8 @@ function chequeoVidas() {
     sectionReinicio.style.display = "flex";
   } else if (vidaJugador == 0) {
     alert("Mejor suerte para la pócima");
-    pBooyah.innerHTML = "SOS FRANCES";
-    sectionAtaques.appendChild(pBooyah);
+    pBooyah.innerHTML = "Mejor suerte para la pócima";
+    sectionMensajes.appendChild(pBooyah);
     let botonDisparo = document.getElementById("disparo-jugador");
     botonDisparo.disabled = true;
     let botonGranada = document.getElementById("granada-jugador");
@@ -220,7 +220,7 @@ function chequeoVidas() {
   } else if (vidaEnemigo == 0) {
     alert("BOOYAH!!");
     pBooyah.innerHTML = "BOOYAH!!";
-    sectionAtaques.appendChild(pBooyah);
+    sectionMensajes.appendChild(pBooyah);
     let botonDisparo = document.getElementById("disparo-jugador");
     botonDisparo.disabled = true;
     let botonGranada = document.getElementById("granada-jugador");
@@ -234,20 +234,23 @@ function chequeoVidas() {
 }
 
 function crearMensaje(resultado) {
-  let sectionMensajes = document.getElementById("texto-personajes");
+  // creo la seccion y los divs:
+  let sectionMensajes = document.getElementById("resultado");
+  let AtaqueDelJugador = document.getElementById("ataque-jugador");
+  let AtaqueDelEnemigo = document.getElementById("ataque-enemigo");
+  // creo los parrafos que van a mostrar los resultados y los ataques:
+  let nuevoAtaqueJugador = document.createElement("p");
+  let nuevoAtaqueEnemigo = document.createElement("p");
+  // le doy el contenido a cada parrafo:
+  sectionMensajes.innerHTML = resultado;
+  nuevoAtaqueJugador.innerHTML = "Atacaste con:" + ataqueJugador;
+  nuevoAtaqueEnemigo.innerHTML = enemigoAleatorioName + ataqueEnemigo;
+  // indico donde va cada parrafo:
+  AtaqueDelJugador.appendChild(nuevoAtaqueJugador);
+  AtaqueDelEnemigo.appendChild(nuevoAtaqueEnemigo);
+
   // document.createElement hace justamente lo que dice, crea el elemento indicado entre parentesis, en este caso un parrafo("p")
-  let parrafo = document.createElement("p");
-  parrafo.innerHTML =
-    "Atacaste con " +
-    ataqueJugador +
-    " y " +
-    enemigoAleatorioName +
-    " " +
-    ataqueEnemigo +
-    ": " +
-    resultado;
   // variable.appendChild hace que mandemos lo que hay entre parentesis a la variable, en este caso indicamos que agregamos el parrafo a la secicon mensajes.
-  sectionMensajes.appendChild(parrafo);
 }
 function reiniciar() {
   // pa reiniciar el juego
