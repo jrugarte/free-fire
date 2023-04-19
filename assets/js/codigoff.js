@@ -22,6 +22,8 @@ function empezarJuego() {
   sectionReinicio.style.display = "none";
   let sectionSelectButton = document.getElementById("select-button");
   sectionSelectButton.style.display = "flex";
+  let divAtaques = getElementById("notif-ataques");
+  divAtaques.style.display = "none";
   pJugador.style.display = "none";
   pEnemigo.style.display = "none";
 
@@ -82,6 +84,9 @@ function SelectEnemy() {
   sectionTextop.style.display = "flex";
   let sectionSelectButton = document.getElementById("select-button");
   sectionSelectButton.style.display = "none";
+  let divAtaques = getElementById("notif-ataques");
+  divAtaques.style.display = "flex";
+
   // let Titulo = document.getElementsByClassName("title");
   // Titulo.style.display = "flex";
 
@@ -89,8 +94,8 @@ function SelectEnemy() {
   pEnemigo.style.display = "flex";
   pJugador.innerHTML = "Tu PV: " + vidaJugador;
   pEnemigo.innerHTML = "PV Enemigo: " + vidaEnemigo;
-  sectionAtaques.appendChild(pJugador);
-  sectionAtaques.appendChild(pEnemigo);
+  divAtaques.appendChild(pJugador);
+  divAtaques.appendChild(pEnemigo);
 
   let spanEnemigo = document.getElementById("personaje-enemigo");
   enemigoAleatorio = aleatorio(1, 5);
@@ -189,12 +194,12 @@ function combate() {
 }
 function chequeoVidas() {
   let sectionMensajes = document.getElementById("resultado");
-  let pBooyah = document.createElement("p");
+  // let pBooyah = document.createElement("p");
 
   if (vidaEnemigo == 0 && vidaJugador == 0) {
     alert("EMPATE");
-    pBooyah.innerHTML = "EMPATE";
-    sectionMensajes.appendChild(pBooyah);
+    sectionMensajes.innerHTML = "EMPATE";
+    // sectionMensajes.appendChild(pBooyah);
     let botonDisparo = document.getElementById("disparo-jugador");
     botonDisparo.disabled = true;
     let botonGranada = document.getElementById("granada-jugador");
@@ -206,8 +211,8 @@ function chequeoVidas() {
     sectionReinicio.style.display = "flex";
   } else if (vidaJugador == 0) {
     alert("Mejor suerte para la pócima");
-    pBooyah.innerHTML = "Mejor suerte para la pócima";
-    sectionMensajes.appendChild(pBooyah);
+    sectionMensajes.innerHTML = "Mejor suerte para la pócima";
+    // sectionMensajes.appendChild(pBooyah);
     let botonDisparo = document.getElementById("disparo-jugador");
     botonDisparo.disabled = true;
     let botonGranada = document.getElementById("granada-jugador");
@@ -219,8 +224,8 @@ function chequeoVidas() {
     sectionReinicio.style.display = "flex";
   } else if (vidaEnemigo == 0) {
     alert("BOOYAH!!");
-    pBooyah.innerHTML = "BOOYAH!!";
-    sectionMensajes.appendChild(pBooyah);
+    sectionMensajes.innerHTML = "BOOYAH!!";
+    // sectionMensajes.appendChild(pBooyah);
     let botonDisparo = document.getElementById("disparo-jugador");
     botonDisparo.disabled = true;
     let botonGranada = document.getElementById("granada-jugador");
