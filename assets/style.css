@@ -168,20 +168,35 @@
     flex-direction: column;
 }
 #notif-ataques{
-    display: flex;
-    width: 550px;
-    justify-content: space-between;
+    display: grid;
+grid-template-columns: 300px 300px;
+    /* width: 850px; */
+    /* justify-content: space-between; */
+    color: aliceblue;
+    /* flex-direction: column;
+    align-content: flex-start;
+    align-items: center; */
 }
+.pv{
+    display: flex;
+    color: aliceblue;
+    justify-content: space-evenly;
+}
+
+
 #ataque-jugador{
     display: flex;
   flex-flow: column-reverse;  
-  color:aliceblue
+  color:aliceblue;
+  align-items: center;
     
 }
 #ataque-enemigo{
     display: flex;
     flex-flow: column-reverse;  
-    color:aliceblue
+    color:aliceblue;
+    align-items: center;
+
 }
 #reiniciar-juego{
     display: flex;

@@ -4,8 +4,6 @@ let vidaJugador = 200;
 let vidaEnemigo = 200;
 let enemigoAleatorioName;
 let enemigoAleatorio;
-let pJugador = document.createElement("p");
-let pEnemigo = document.createElement("p");
 
 function empezarJuego() {
   // let sectionEncabezado = document.getElementById("encabezado");
@@ -22,10 +20,12 @@ function empezarJuego() {
   sectionReinicio.style.display = "none";
   let sectionSelectButton = document.getElementById("select-button");
   sectionSelectButton.style.display = "flex";
-  let divAtaques = getElementById("notif-ataques");
+  let divAtaques = document.getElementById("notif-ataques");
   divAtaques.style.display = "none";
-  pJugador.style.display = "none";
-  pEnemigo.style.display = "none";
+  let pvJugador = document.getElementById("pv-jugador");
+  pvJugador.style.display = "none";
+  let pvEnemigo = document.getElementById("pv-enemigo");
+  pvEnemigo.style.display = "none";
 
   let botonSelect = document.getElementById("Seleccionar");
   botonSelect.addEventListener("click", SelectPlayer);
@@ -84,18 +84,20 @@ function SelectEnemy() {
   sectionTextop.style.display = "flex";
   let sectionSelectButton = document.getElementById("select-button");
   sectionSelectButton.style.display = "none";
-  let divAtaques = getElementById("notif-ataques");
-  divAtaques.style.display = "flex";
+  let divAtaques = document.getElementById("notif-ataques");
+  divAtaques.style.display = "grid";
 
   // let Titulo = document.getElementsByClassName("title");
   // Titulo.style.display = "flex";
 
-  pJugador.style.display = "flex";
-  pEnemigo.style.display = "flex";
-  pJugador.innerHTML = "Tu PV: " + vidaJugador;
-  pEnemigo.innerHTML = "PV Enemigo: " + vidaEnemigo;
-  divAtaques.appendChild(pJugador);
-  divAtaques.appendChild(pEnemigo);
+  let pvJugador = document.getElementById("pv-jugador");
+  pvJugador.style.display = "flex";
+  let pvEnemigo = document.getElementById("pv-enemigo");
+  pvEnemigo.style.display = "flex";
+  pvJugador.innerHTML = vidaJugador;
+  pvEnemigo.innerHTML = vidaEnemigo;
+  // divAtaques.appendChild(pJugador);
+  // divAtaques.appendChild(pEnemigo);
 
   let spanEnemigo = document.getElementById("personaje-enemigo");
   enemigoAleatorio = aleatorio(1, 5);
@@ -138,6 +140,11 @@ function ponerPared() {
   ataqueEnemigoAleatorio();
 }
 function ataqueEnemigoAleatorio() {
+  let pvJugador = document.getElementById("pv-jugador");
+  pvJugador.style.display = "flex";
+  let pvEnemigo = document.getElementById("pv-enemigo");
+  pvEnemigo.style.display = "flex";
+
   let ataqueAleatorio = aleatorio(1, 3);
   if (ataqueAleatorio == 1) {
     ataqueEnemigo = "DISPARO";
@@ -151,6 +158,11 @@ function ataqueEnemigoAleatorio() {
 }
 
 function combate() {
+  let pvJugador = document.getElementById("pv-jugador");
+  pvJugador.style.display = "flex";
+  let pvEnemigo = document.getElementById("pv-enemigo");
+  pvEnemigo.style.display = "flex";
+
   if (ataqueJugador === "ESCAPAR") {
     if (ataqueEnemigo === "ESCAPA") {
       crearMensaje("Empate");
@@ -161,7 +173,7 @@ function combate() {
     if (ataqueEnemigo === "DISPARO") {
       crearMensaje("Te espaldeó");
       vidaJugador = vidaJugador - 50;
-      pJugador.innerHTML = "Tu PV: " + vidaJugador;
+      pvJugador.innerHTML = vidaJugador;
     }
   } else if (ataqueJugador === "PARED") {
     if (ataqueEnemigo === "ESCAPA") {
@@ -177,7 +189,7 @@ function combate() {
     if (ataqueEnemigo === "ESCAPA") {
       crearMensaje("Espaldeaste");
       vidaEnemigo = vidaEnemigo - 50;
-      pEnemigo.innerHTML = "PV Enemigo: " + vidaEnemigo;
+      pvEnemigo.innerHTML = vidaEnemigo;
     }
     if (ataqueEnemigo === "PARED") {
       crearMensaje("Zafó");
@@ -186,8 +198,8 @@ function combate() {
       crearMensaje("Pelea de mancos");
       vidaJugador = vidaJugador - 50;
       vidaEnemigo = vidaEnemigo - 50;
-      pJugador.innerHTML = "Tu PV: " + vidaJugador;
-      pEnemigo.innerHTML = "PV Enemigo: " + vidaEnemigo;
+      pvJugador.innerHTML = vidaJugador;
+      pvEnemigo.innerHTML = vidaEnemigo;
     }
   }
   chequeoVidas();
