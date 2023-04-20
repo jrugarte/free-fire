@@ -66,8 +66,13 @@
     transition: 0.2s;
     color: #ff00c3;
 }
+input:checked + label{
+    background-image: url(./images/bg2player.jpeg);
+    cursor: pointer;
+    color: #ff00c3;
+}
 
-#Jotaerre:checked ~ .select-jugador[for="Jotaerre"],
+/* #Jotaerre:checked ~ .select-jugador[for="Jotaerre"],
 #Juanserino:checked ~ .select-jugador[for="Juanserino"],
 #Alesi:checked ~ .select-jugador[for="Alesi"],
 #Enzinix:checked ~ .select-jugador[for="Enzinix"],
@@ -76,7 +81,7 @@
     background-image: url(./images/bg2player.jpeg);
     cursor: pointer;
     color: #ff00c3;
-}
+} */
 #ataques{
     display: flex;
     flex-direction: column;
@@ -169,13 +174,8 @@
 }
 #notif-ataques{
     display: grid;
-grid-template-columns: 300px 300px;
-    /* width: 850px; */
-    /* justify-content: space-between; */
+    grid-template-columns: 300px 300px;
     color: aliceblue;
-    /* flex-direction: column;
-    align-content: flex-start;
-    align-items: center; */
 }
 .pv{
     display: flex;
@@ -230,7 +230,6 @@ input{
 }
 
 
-
 @media (max-width: 360px){
     .title {
         color: white;
@@ -254,6 +253,34 @@ input{
         justify-content: center;
         color: antiquewhite;
         font-size: 16px;
+    }
+    #personaje-select {
+        display: flex;
+        color: #ffffff;
+        font-size: 15px;
+        width: 280px;
+        justify-content: space-around;
+        margin: 5px;
+    }
+    #personaje {
+        display: flex;
+        color: #2fd511;
+        font-size: 15px;
+    }
+    #enemigo-select {
+        display: flex;
+        color: #ffffff;
+        font-size: 15px;
+        width: 280px;
+        justify-content: space-around;
+        align-items: center;
+        margin: 5px;
+    }
+
+    #personaje-enemigo {
+        display: flex;
+        color: #2fd511;
+        font-size: 15px;
     }
     #div-botones{
         display: flex;
@@ -289,7 +316,7 @@ input{
         /* justify-content: space-between; */
         color: aliceblue;
     }
-    
+
     #ataque-jugador{
         display: flex;
         flex-flow: column-reverse;
@@ -308,5 +335,19 @@ input{
         margin: 3px;
     
     }
-    
+    #reinicio {
+    display: flex;
+    flex-direction: column;
+    height: 45px;
+    width: 125px;
+    margin: 10px;
+    border: 2px solid #3ad606;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    font-size: 15px;
+    font-family: 'Righteous', cursive;
+    border-radius: 15px;
+    color: white;
+}
 }

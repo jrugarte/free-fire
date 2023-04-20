@@ -1,3 +1,35 @@
+let sectionEncabezado = document.getElementById("encabezado");
+let personajeSelect = document.getElementById("personaje-select");
+let enemigoSelect = document.getElementById("enemigo-select");
+let sectionAtaques = document.getElementById("ataques");
+let sectionTextop = document.getElementById("texto-personajes");
+let sectionReinicio = document.getElementById("reiniciar-juego");
+let sectionSelectButton = document.getElementById("select-button");
+let divAtaques = document.getElementById("notif-ataques");
+let pvJugador = document.getElementById("pv-jugador");
+let pvEnemigo = document.getElementById("pv-enemigo");
+let botonSelect = document.getElementById("Seleccionar");
+let botonDisparo = document.getElementById("disparo-jugador");
+let botonGranada = document.getElementById("granada-jugador");
+let botonPared = document.getElementById("tirar-pared");
+let botonReinicio = document.getElementById("reinicio");
+
+//aca creo las variables de cada check
+let Jotaerre = document.getElementById("Jotaerre");
+let Juanserino = document.getElementById("Juanserino");
+let Alesi = document.getElementById("Alesi");
+let Enzinix = document.getElementById("Enzinix");
+let Alex = document.getElementById("Alex");
+let spanPersonaje = document.getElementById("personaje");
+
+let sectionPersonaje = document.getElementById("seleccionar-personaje");
+let spanEnemigo = document.getElementById("personaje-enemigo");
+
+let sectionMensajes = document.getElementById("resultado");
+
+let AtaqueDelJugador = document.getElementById("ataque-jugador");
+let AtaqueDelEnemigo = document.getElementById("ataque-enemigo");
+
 let ataqueJugador;
 let ataqueEnemigo;
 let vidaJugador = 200;
@@ -6,48 +38,26 @@ let enemigoAleatorioName;
 let enemigoAleatorio;
 
 function empezarJuego() {
-  // let sectionEncabezado = document.getElementById("encabezado");
-  // sectionEncabezado.style.display = "block";
-  let personajeSelect = document.getElementById("personaje-select");
+  sectionEncabezado.style.display = "flex";
   personajeSelect.style.display = "none";
-  let enemigoSelect = document.getElementById("enemigo-select");
   enemigoSelect.style.display = "none";
-  let sectionAtaques = document.getElementById("ataques");
   sectionAtaques.style.display = "none";
-  let sectionTextop = document.getElementById("texto-personajes");
   sectionTextop.style.display = "none";
-  let sectionReinicio = document.getElementById("reiniciar-juego");
   sectionReinicio.style.display = "none";
-  let sectionSelectButton = document.getElementById("select-button");
   sectionSelectButton.style.display = "flex";
-  let divAtaques = document.getElementById("notif-ataques");
   divAtaques.style.display = "none";
-  let pvJugador = document.getElementById("pv-jugador");
   pvJugador.style.display = "none";
-  let pvEnemigo = document.getElementById("pv-enemigo");
   pvEnemigo.style.display = "none";
 
-  let botonSelect = document.getElementById("Seleccionar");
   botonSelect.addEventListener("click", SelectPlayer);
   //aca agrego los botones de atk y def(1)
-  let botonDisparo = document.getElementById("disparo-jugador");
   botonDisparo.addEventListener("click", disparar);
-  let botonGranada = document.getElementById("granada-jugador");
   botonGranada.addEventListener("click", escapar);
-  let botonPared = document.getElementById("tirar-pared");
   botonPared.addEventListener("click", ponerPared);
-  let botonReinicio = document.getElementById("reinicio");
   botonReinicio.addEventListener("click", reiniciar);
 }
 function SelectPlayer() {
   //seleccionar jugador
-  //aca creo las variables de cada check
-  let Jotaerre = document.getElementById("Jotaerre");
-  let Juanserino = document.getElementById("Juanserino");
-  let Alesi = document.getElementById("Alesi");
-  let Enzinix = document.getElementById("Enzinix");
-  let Alex = document.getElementById("Alex");
-  let spanPersonaje = document.getElementById("personaje");
   let jugar = 1;
 
   if (Jotaerre.checked) {
@@ -70,36 +80,18 @@ function SelectPlayer() {
   }
 }
 function SelectEnemy() {
-  let sectionPersonaje = document.getElementById("seleccionar-personaje");
   sectionPersonaje.style.display = "none";
-  let sectionEncabezado = document.getElementById("encabezado");
   sectionEncabezado.style.display = "none";
-  let personajeSelect = document.getElementById("personaje-select");
   personajeSelect.style.display = "flex";
-  let enemigoSelect = document.getElementById("enemigo-select");
   enemigoSelect.style.display = "flex";
-  let sectionAtaques = document.getElementById("ataques");
   sectionAtaques.style.display = "flex";
-  let sectionTextop = document.getElementById("texto-personajes");
   sectionTextop.style.display = "flex";
-  let sectionSelectButton = document.getElementById("select-button");
   sectionSelectButton.style.display = "none";
-  let divAtaques = document.getElementById("notif-ataques");
   divAtaques.style.display = "grid";
-
-  // let Titulo = document.getElementsByClassName("title");
-  // Titulo.style.display = "flex";
-
-  let pvJugador = document.getElementById("pv-jugador");
   pvJugador.style.display = "flex";
-  let pvEnemigo = document.getElementById("pv-enemigo");
   pvEnemigo.style.display = "flex";
   pvJugador.innerHTML = vidaJugador;
   pvEnemigo.innerHTML = vidaEnemigo;
-  // divAtaques.appendChild(pJugador);
-  // divAtaques.appendChild(pEnemigo);
-
-  let spanEnemigo = document.getElementById("personaje-enemigo");
   enemigoAleatorio = aleatorio(1, 5);
   enemigoAleatorioName;
 
@@ -129,23 +121,19 @@ function disparar() {
   ataqueJugador = "DISPARO";
   ataqueEnemigoAleatorio();
 }
-
 function escapar() {
   ataqueJugador = "ESCAPAR";
   ataqueEnemigoAleatorio();
 }
 function ponerPared() {
-  // console.log("PUSISTE UNA PARED");
   ataqueJugador = "PARED";
   ataqueEnemigoAleatorio();
 }
 function ataqueEnemigoAleatorio() {
-  let pvJugador = document.getElementById("pv-jugador");
   pvJugador.style.display = "flex";
-  let pvEnemigo = document.getElementById("pv-enemigo");
   pvEnemigo.style.display = "flex";
-
   let ataqueAleatorio = aleatorio(1, 3);
+
   if (ataqueAleatorio == 1) {
     ataqueEnemigo = "DISPARO";
   } else if (ataqueAleatorio == 2) {
@@ -154,13 +142,10 @@ function ataqueEnemigoAleatorio() {
     ataqueEnemigo = "PARED";
   }
   combate();
-  // respuestaEnemigo.innerHTML = "El enemigo " + ataqueEnemigo;
 }
 
 function combate() {
-  let pvJugador = document.getElementById("pv-jugador");
   pvJugador.style.display = "flex";
-  let pvEnemigo = document.getElementById("pv-enemigo");
   pvEnemigo.style.display = "flex";
 
   if (ataqueJugador === "ESCAPAR") {
@@ -205,56 +190,37 @@ function combate() {
   chequeoVidas();
 }
 function chequeoVidas() {
-  let sectionMensajes = document.getElementById("resultado");
-  // let pBooyah = document.createElement("p");
-
   if (vidaEnemigo == 0 && vidaJugador == 0) {
     alert("EMPATE");
     sectionMensajes.innerHTML = "EMPATE";
-    // sectionMensajes.appendChild(pBooyah);
-    let botonDisparo = document.getElementById("disparo-jugador");
+
     botonDisparo.disabled = true;
-    let botonGranada = document.getElementById("granada-jugador");
     botonGranada.disabled = true;
-    let botonPared = document.getElementById("tirar-pared");
     botonPared.disabled = true;
 
-    let sectionReinicio = document.getElementById("reiniciar-juego");
     sectionReinicio.style.display = "flex";
   } else if (vidaJugador == 0) {
-    alert("Mejor suerte para la pócima");
+    alert("PERDISTE");
     sectionMensajes.innerHTML = "Mejor suerte para la pócima";
-    // sectionMensajes.appendChild(pBooyah);
-    let botonDisparo = document.getElementById("disparo-jugador");
+
     botonDisparo.disabled = true;
-    let botonGranada = document.getElementById("granada-jugador");
     botonGranada.disabled = true;
-    let botonPared = document.getElementById("tirar-pared");
     botonPared.disabled = true;
 
-    let sectionReinicio = document.getElementById("reiniciar-juego");
     sectionReinicio.style.display = "flex";
   } else if (vidaEnemigo == 0) {
     alert("BOOYAH!!");
     sectionMensajes.innerHTML = "BOOYAH!!";
-    // sectionMensajes.appendChild(pBooyah);
-    let botonDisparo = document.getElementById("disparo-jugador");
+
     botonDisparo.disabled = true;
-    let botonGranada = document.getElementById("granada-jugador");
     botonGranada.disabled = true;
-    let botonPared = document.getElementById("tirar-pared");
     botonPared.disabled = true;
 
-    let sectionReinicio = document.getElementById("reiniciar-juego");
     sectionReinicio.style.display = "flex";
   }
 }
 
 function crearMensaje(resultado) {
-  // creo la seccion y los divs:
-  let sectionMensajes = document.getElementById("resultado");
-  let AtaqueDelJugador = document.getElementById("ataque-jugador");
-  let AtaqueDelEnemigo = document.getElementById("ataque-enemigo");
   // creo los parrafos que van a mostrar los resultados y los ataques:
   let nuevoAtaqueJugador = document.createElement("p");
   let nuevoAtaqueEnemigo = document.createElement("p");
