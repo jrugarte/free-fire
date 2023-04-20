@@ -228,3 +228,85 @@ grid-template-columns: 300px 300px;
 input{
     display: none;
 }
+
+
+
+@media (max-width: 360px){
+    .title {
+        color: white;
+        height: 50px;
+        width: auto;
+        font-size: 40px;
+    }
+    #seleccionar-personaje{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #FFED00;
+        gap: 10px;
+    }
+    
+    #encabezado{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: antiquewhite;
+        font-size: 16px;
+    }
+    #div-botones{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+    }
+
+    #texto-personajes{
+        display: flex;
+        width: 230px;
+        margin: 10px;
+        padding: 10px;
+        justify-content: space-evenly;
+        color: aliceblue;
+        background-color: #1f35b1d4;
+        font-size: 20px;
+        border-radius: 20px;
+    }
+    #resultado{
+        display: flex;
+        margin: 5px;
+        padding: 10px;
+        justify-content: center;
+        color: #57b1ff;
+        font-size: 20px;
+        align-items: center;
+        flex-direction: column;
+    }
+    #notif-ataques{
+        display: grid;
+        grid-template-columns: 150px 150px;
+        /* justify-content: space-between; */
+        color: aliceblue;
+    }
+    
+    #ataque-jugador{
+        display: flex;
+        flex-flow: column-reverse;
+        color: aliceblue;
+        align-items: center;
+        font-size: 13px;
+        margin: 3px;
+        
+    }
+    #ataque-enemigo{
+        display: flex;
+        flex-flow: column-reverse;
+        color: aliceblue;
+        align-items: center;
+        font-size: 13px;
+        margin: 3px;
+    
+    }
+    
+}
