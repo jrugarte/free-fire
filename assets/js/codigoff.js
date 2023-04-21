@@ -1,34 +1,37 @@
-let sectionEncabezado = document.getElementById("encabezado");
-let personajeSelect = document.getElementById("personaje-select");
-let enemigoSelect = document.getElementById("enemigo-select");
-let sectionAtaques = document.getElementById("ataques");
-let sectionTextop = document.getElementById("texto-personajes");
-let sectionReinicio = document.getElementById("reiniciar-juego");
-let sectionSelectButton = document.getElementById("select-button");
-let divAtaques = document.getElementById("notif-ataques");
-let pvJugador = document.getElementById("pv-jugador");
-let pvEnemigo = document.getElementById("pv-enemigo");
-let botonSelect = document.getElementById("Seleccionar");
-let botonDisparo = document.getElementById("disparo-jugador");
-let botonGranada = document.getElementById("granada-jugador");
-let botonPared = document.getElementById("tirar-pared");
-let botonReinicio = document.getElementById("reinicio");
+const sectionEncabezado = document.getElementById("encabezado");
+const personajeSelect = document.getElementById("personaje-select");
+const enemigoSelect = document.getElementById("enemigo-select");
+const sectionAtaques = document.getElementById("ataques");
+const sectionTextop = document.getElementById("texto-personajes");
+const sectionReinicio = document.getElementById("reiniciar-juego");
+const sectionSelectButton = document.getElementById("select-button");
+const divAtaques = document.getElementById("notif-ataques");
+const pvJugador = document.getElementById("pv-jugador");
+const pvEnemigo = document.getElementById("pv-enemigo");
+const botonSelect = document.getElementById("Seleccionar");
+const botonDisparo = document.getElementById("disparo-jugador");
+const botonGranada = document.getElementById("granada-jugador");
+const botonPared = document.getElementById("tirar-pared");
+const botonReinicio = document.getElementById("reinicio");
 
 //aca creo las variables de cada check
-let Jotaerre = document.getElementById("Jotaerre");
-let Juanserino = document.getElementById("Juanserino");
-let Alesi = document.getElementById("Alesi");
-let Enzinix = document.getElementById("Enzinix");
-let Alex = document.getElementById("Alex");
-let spanPersonaje = document.getElementById("personaje");
+const Jotaerre = document.getElementById("Jotaerre");
+const Juanserino = document.getElementById("Juanserino");
+const Alesi = document.getElementById("Alesi");
+const Enzinix = document.getElementById("Enzinix");
+const Alex = document.getElementById("Alex");
+const spanPersonaje = document.getElementById("personaje");
 
-let sectionPersonaje = document.getElementById("seleccionar-personaje");
-let spanEnemigo = document.getElementById("personaje-enemigo");
+const sectionPersonaje = document.getElementById("seleccionar-personaje");
+const spanEnemigo = document.getElementById("personaje-enemigo");
 
-let sectionMensajes = document.getElementById("resultado");
+const sectionMensajes = document.getElementById("resultado");
 
-let AtaqueDelJugador = document.getElementById("ataque-jugador");
-let AtaqueDelEnemigo = document.getElementById("ataque-enemigo");
+const AtaqueDelJugador = document.getElementById("ataque-jugador");
+const AtaqueDelEnemigo = document.getElementById("ataque-enemigo");
+
+// formato para crear un Array:
+let Jugadores = [];
 
 let ataqueJugador;
 let ataqueEnemigo;
@@ -36,6 +39,33 @@ let vidaJugador = 200;
 let vidaEnemigo = 200;
 let enemigoAleatorioName;
 let enemigoAleatorio;
+
+// creando una clase: Una clase tiene un constructor, el cual indica las propiedades del objeto a ser creado en la clase(nombre, foto, vida, ataques, etc)
+class Jugador {
+  constructor(nombre, vida, foto, ataques) {
+    // Las propiedades se guardan en el constructor con el siguiente formato:
+    this.nombre = nombre;
+    this.vida = vida;
+    this.foto = foto;
+    this.ataques = ataques;
+  }
+}
+// Creo una variable y le asigno una clase, en este caso Jugadores, y le indico las propiedades:
+let L4FJotaerre = new Jugador("L4FJotaerre", "200", "./assets/images/jr.png");
+let L4FJuanserino = new Jugador(
+  "L4FJuanserino",
+  "200",
+  "./assets/images/js.png"
+);
+let L4FAlesi = new Jugador("L4FAlesi", "200", "./assets/images/alesi.png");
+let L4FEnzinix = new Jugador(
+  "L4FEnzinix",
+  "200",
+  "./assets/images/enzinix.png"
+);
+let L4FAlex = new Jugador("L4FAlex", "200", "./assets/images/alex.png");
+// Aca ingreso(.push) los objetos al Array:
+Jugadores.push(L4FAlesi, L4FAlex, L4FEnzinix, L4FJotaerre, L4FJuanserino);
 
 function empezarJuego() {
   sectionEncabezado.style.display = "flex";
