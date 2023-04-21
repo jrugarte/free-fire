@@ -72,16 +72,6 @@ input:checked + label{
     color: #ff00c3;
 }
 
-/* #Jotaerre:checked ~ .select-jugador[for="Jotaerre"],
-#Juanserino:checked ~ .select-jugador[for="Juanserino"],
-#Alesi:checked ~ .select-jugador[for="Alesi"],
-#Enzinix:checked ~ .select-jugador[for="Enzinix"],
-#Alex:checked ~ .select-jugador[for="Alex"]
-{
-    background-image: url(./images/bg2player.jpeg);
-    cursor: pointer;
-    color: #ff00c3;
-} */
 #ataques{
     display: flex;
     flex-direction: column;
@@ -101,7 +91,7 @@ input:checked + label{
     display: flex;
     color: #ffffff;
     font-size: large;
-    width: 280px;
+    width: 300px;
     justify-content: space-around;
     margin: 5px;
 }

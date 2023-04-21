@@ -30,7 +30,7 @@ const sectionMensajes = document.getElementById("resultado");
 const AtaqueDelJugador = document.getElementById("ataque-jugador");
 const AtaqueDelEnemigo = document.getElementById("ataque-enemigo");
 
-// formato para crear un Array:
+// formato para crear un Array, con los corchetes cuadrados[]:
 let Jugadores = [];
 
 let ataqueJugador;
