@@ -15,11 +15,6 @@ const botonPared = document.getElementById("tirar-pared");
 const botonReinicio = document.getElementById("reinicio");
 
 //aca creo las variables de cada check
-const Jotaerre = document.getElementById("Jotaerre");
-const Juanserino = document.getElementById("Juanserino");
-const Alesi = document.getElementById("Alesi");
-const Enzinix = document.getElementById("Enzinix");
-const Alex = document.getElementById("Alex");
 const spanPersonaje = document.getElementById("personaje");
 
 const sectionPersonaje = document.getElementById("seleccionar-personaje");
@@ -35,6 +30,12 @@ let Jugadores = [];
 
 let ataqueJugador;
 let ataqueEnemigo;
+let opcionDeJugador;
+let inputJotaerre = document.getElementById("L4F~Jotaerre");
+let inputJuanserino = document.getElementById("L4F~Juanserino");
+let inputAlesi = document.getElementById("L4F~Alesi");
+let inputEnzinix = document.getElementById("L4F~Enzinix");
+let inputAlex = document.getElementById("L4F~Alex");
 let vidaJugador = 200;
 let vidaEnemigo = 200;
 let enemigoAleatorioName;
@@ -47,25 +48,45 @@ class Jugador {
     this.nombre = nombre;
     this.vida = vida;
     this.foto = foto;
-    this.ataques = ataques;
+    this.ataques = [];
   }
 }
 // Creo una variable y le asigno una clase, en este caso Jugadores, y le indico las propiedades:
-let L4FJotaerre = new Jugador("L4FJotaerre", "200", "./assets/images/jr.png");
-let L4FJuanserino = new Jugador(
-  "L4FJuanserino",
-  "200",
-  "./assets/images/js.png"
+let L4FJotaerre = new Jugador("L4F~Jotaerre", "200", "./assets/images/jr.png");
+let L4FJuanse = new Jugador("L4F~Juanserino", "200", "./assets/images/js.png");
+let L4FAlesi = new Jugador("L4F~Alesi", "200", "./assets/images/alesi.png");
+let L4FEnzo = new Jugador("L4F~Enzinix", "200", "./assets/images/enzinix.png");
+let L4FAlex = new Jugador("L4F~Alex", "200", "./assets/images/alex.png");
+
+//aca ingreso(.push)los ataques de cada jugador(objeto), indicandole esa informacion y guardandola en el array de ataques[]:
+L4FJotaerre.ataques.push(
+  { nombre: "🎯", id: "disparo-jugador" },
+  { nombre: "🏃🏽‍♂️", id: "granada-jugador" },
+  { nombre: "🧊", id: "tirar-pared" }
 );
-let L4FAlesi = new Jugador("L4FAlesi", "200", "./assets/images/alesi.png");
-let L4FEnzinix = new Jugador(
-  "L4FEnzinix",
-  "200",
-  "./assets/images/enzinix.png"
+L4FJuanse.ataques.push(
+  { nombre: "🎯", id: "disparo-jugador" },
+  { nombre: "🏃🏽‍♂️", id: "granada-jugador" },
+  { nombre: "🧊", id: "tirar-pared" }
 );
-let L4FAlex = new Jugador("L4FAlex", "200", "./assets/images/alex.png");
-// Aca ingreso(.push) los objetos al Array:
-Jugadores.push(L4FAlesi, L4FAlex, L4FEnzinix, L4FJotaerre, L4FJuanserino);
+L4FAlesi.ataques.push(
+  { nombre: "🎯", id: "disparo-jugador" },
+  { nombre: "🏃🏽‍♂️", id: "granada-jugador" },
+  { nombre: "🧊", id: "tirar-pared" }
+);
+L4FEnzo.ataques.push(
+  { nombre: "🎯", id: "disparo-jugador" },
+  { nombre: "🏃🏽‍♂️", id: "granada-jugador" },
+  { nombre: "🧊", id: "tirar-pared" }
+);
+L4FAlex.ataques.push(
+  { nombre: "🎯", id: "disparo-jugador" },
+  { nombre: "🏃🏽‍♂️", id: "granada-jugador" },
+  { nombre: "🧊", id: "tirar-pared" }
+);
+
+// Aca ingreso(.push)los objetos al Array jugadores[]:
+Jugadores.push(L4FAlesi, L4FAlex, L4FEnzo, L4FJotaerre, L4FJuanse);
 
 function empezarJuego() {
   sectionEncabezado.style.display = "flex";
@@ -79,8 +100,27 @@ function empezarJuego() {
   pvJugador.style.display = "none";
   pvEnemigo.style.display = "none";
 
+  // Por cada uno(forEach) de los elementos que haya en el array(Jugadores), hace tal cosa(funcion):
+  Jugadores.forEach((Jugador) => {
+    // lo siguiente es llamado Template literario
+    // el ${} sirve para aplicar los valores de las variables en el texto que tengamos:
+    opcionDeJugador = ` <input type="radio" name="personaje" id= ${Jugador.nombre} />
+      <label class="select-jugador" for=${Jugador.nombre} >
+     <p><strong>${Jugador.nombre}</strong></p>
+     <img src=${Jugador.foto} alt=${Jugador.nombre} />
+      </label>`;
+    // aca mostramos en el html la variable opcionDeJugador, la cual contiene lo anteriormente indicado:
+    // el += hace que muestre todas las opciones que estan en la variable (caso contrario, se va a mostrar una sola)
+    sectionPersonaje.innerHTML += opcionDeJugador;
+    inputJotaerre = document.getElementById("L4F~Jotaerre");
+    inputJuanserino = document.getElementById("L4F~Juanserino");
+    inputAlesi = document.getElementById("L4F~Alesi");
+    inputEnzinix = document.getElementById("L4F~Enzinix");
+    inputAlex = document.getElementById("L4F~Alex");
+  });
+
   botonSelect.addEventListener("click", SelectPlayer);
-  //aca agrego los botones de atk y def(1)
+  //aca agrego los eventos a los botones de atk, def y reinicio
   botonDisparo.addEventListener("click", disparar);
   botonGranada.addEventListener("click", escapar);
   botonPared.addEventListener("click", ponerPared);
@@ -90,17 +130,16 @@ function SelectPlayer() {
   //seleccionar jugador
   let jugar = 1;
 
-  if (Jotaerre.checked) {
-    //.innerHTML hace que podamos darle un valor a lo que hay en el span indicado anteriormente, en este caso con un condicional
-    spanPersonaje.innerHTML = " L4F~Jotaerre ";
-  } else if (Juanserino.checked) {
-    spanPersonaje.innerHTML = " L4F~Juanserino";
-  } else if (Alesi.checked) {
-    spanPersonaje.innerHTML = " L4F~Alesi";
-  } else if (Enzinix.checked) {
-    spanPersonaje.innerHTML = " L4F~Enzinix";
-  } else if (Alex.checked) {
-    spanPersonaje.innerHTML = " L4F~Alex";
+  if (inputJotaerre.checked) {
+    spanPersonaje.innerHTML = inputJotaerre.id;
+  } else if (inputJuanserino.checked) {
+    spanPersonaje.innerHTML = inputJuanserino.id;
+  } else if (inputAlesi.checked) {
+    spanPersonaje.innerHTML = inputAlesi.id;
+  } else if (inputEnzinix.checked) {
+    spanPersonaje.innerHTML = inputEnzinix.id;
+  } else if (inputAlex.checked) {
+    spanPersonaje.innerHTML = inputAlex.id;
   } else {
     alert("Por favor, selecciona un jugador.");
     jugar = 0;
@@ -122,25 +161,13 @@ function SelectEnemy() {
   pvEnemigo.style.display = "flex";
   pvJugador.innerHTML = vidaJugador;
   pvEnemigo.innerHTML = vidaEnemigo;
-  enemigoAleatorio = aleatorio(1, 5);
+  // en la siguiente linea de codigo lo que hago es darle un valor limite a la funcion aleatorio, en vez de darle un numero fijo, le doy un valor que ya tengo(una "unica verdad"), que es el length del array jugadores(el -1 es para indicar el valor del indice del mismo):
+  enemigoAleatorio = aleatorio(0, Jugadores.length - 1);
   enemigoAleatorioName;
 
-  if (enemigoAleatorio == 1) {
-    spanEnemigo.innerHTML = " L4F~Jotaerre";
-    enemigoAleatorioName = " L4F~Jotaerre";
-  } else if (enemigoAleatorio == 2) {
-    spanEnemigo.innerHTML = " L4F~Juanserino";
-    enemigoAleatorioName = " L4F~Juanserino";
-  } else if (enemigoAleatorio == 3) {
-    spanEnemigo.innerHTML = " L4F~Alesi";
-    enemigoAleatorioName = " L4F~Alesi";
-  } else if (enemigoAleatorio == 4) {
-    spanEnemigo.innerHTML = " L4F~Enzinix";
-    enemigoAleatorioName = " L4F~Enzinix";
-  } else {
-    spanEnemigo.innerHTML = " L4F~Alex";
-    enemigoAleatorioName = " L4F~Alex";
-  }
+  // en la siguiente linea, lo que hacemos es, teniendo en cuenta el valor que me trae enemigoAleatorio, traer la propiedad 'nombre' del indice seleccionado del array Jugadores:
+  spanEnemigo.innerHTML = Jugadores[enemigoAleatorio].nombre;
+  enemigoAleatorioName = Jugadores[enemigoAleatorio].nombre;
 }
 function aleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
