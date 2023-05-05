@@ -229,9 +229,6 @@ input{
     align-items: center;
     justify-content: center;
 }
-#mapa{
-    border: 2px solid white;
-}
 #mover-mapa{
     display: grid;
     width: 119px;
@@ -240,8 +237,14 @@ input{
     align-items: center;
     justify-content: space-around;
 }
+#mapa-title{
+    color: white;
+    height: 50px;
+    width: auto;
+    font-size: 40px;
+}
 
-@media (max-width: 360px){
+@media (max-width: 560px){
     .title {
         color: white;
         height: 50px;
@@ -360,5 +363,11 @@ input{
     font-family: 'Righteous', cursive;
     border-radius: 15px;
     color: white;
+}
+#mapa-title{
+    color: white;
+    height: 30px;
+    width: auto;
+    font-size: 20px;
 }
 }

@@ -4,6 +4,7 @@
     <title>FireFree</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="./assets/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body id="juego" background="./assets/images/wpp.jpeg">
     <section id="titulo">
@@ -25,7 +26,7 @@
     </section>
 
     <section id="ver-mapa">
-      <h1 class="title">🔥Ve hacia tu enemigo🔥</h1>
+      <h1 id="mapa-title">🔥Ve hacia tu enemigo🔥</h1>
       <canvas id="mapa"></canvas>
       <div id="mover-mapa">
         <button onmouseup="stopMovement()" onmousedown="moverIzquierda()">

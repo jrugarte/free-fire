@@ -48,24 +48,35 @@ let lienzo = mapa.getContext("2d");
 let intervalo;
 let mapaBg = new Image();
 mapaBg.src = "./assets/images/mapaBg.jpeg";
-
 let vidaJugador = 200;
 let vidaEnemigo = 200;
 let enemigoAleatorioName;
-// let enemigoAleatorio;
+const alturaMax = 490;
+let alturaBuscada;
+let anchoMapa = window.innerWidth - 20;
+alturaBuscada = (anchoMapa * 490) / 450;
+const anchoMaxMapa = 490;
 
+if (anchoMapa > anchoMaxMapa) {
+  anchoMapa = anchoMaxMapa - 20;
+}
+if (alturaBuscada > alturaMax) {
+  alturaBuscada = alturaMax - 20;
+}
+mapa.width = anchoMapa;
+mapa.height = alturaBuscada;
 // creando una clase: Una clase tiene un constructor, el cual indica las propiedades del objeto a ser creado en la clase(nombre, foto, vida, ataques, etc)
 class Jugador {
-  constructor(nombre, vida, foto, x = 10, y = 10) {
+  constructor(nombre, vida, foto) {
     // Las propiedades se guardan en el constructor con el siguiente formato:
     this.nombre = nombre;
     this.vida = vida;
     this.foto = foto;
     this.ataques = [];
-    this.x = x;
-    this.y = y;
     this.ancho = 80;
     this.alto = 80;
+    this.x = aleatorio(0, mapa.width - this.ancho);
+    this.y = aleatorio(0, mapa.height - this.alto);
     this.mapaFoto = new Image();
     this.mapaFoto.src = foto;
     this.velocidadX = 0;
@@ -87,38 +98,24 @@ let L4FAlex = new Jugador("L4F~Alex", "200", "./assets/images/alex.png");
 let EnemigoL4FJotaerre = new Jugador(
   "L4F~Jotaerre",
   "200",
-  "./assets/images/jr2.png",
-  130,
-  170
+  "./assets/images/jr2.png"
 );
 let EnemigoL4FJuanse = new Jugador(
   "L4F~Juanserino",
   "200",
-  "./assets/images/js.png",
-  350,
-  60
+  "./assets/images/js.png"
 );
 let EnemigoL4FAlesi = new Jugador(
   "L4F~Alesi",
   "200",
-  "./assets/images/alesi.png",
-  270,
-  140
+  "./assets/images/alesi.png"
 );
 let EnemigoL4FEnzo = new Jugador(
   "L4F~Enzinix",
   "200",
-  "./assets/images/enzinix.png",
-  390,
-  260
+  "./assets/images/enzinix.png"
 );
-let EnemigoL4FAlex = new Jugador(
-  "L4F~Alex",
-  "200",
-  "./assets/images/alex.png",
-  165,
-  320
-);
+let EnemigoL4FAlex = new Jugador("L4F~Alex", "200", "./assets/images/alex.png");
 
 //aca ingreso(.push)los ataques de cada jugador(objeto), indicandole esa informacion y guardandola en el array de ataques[]:
 L4FJotaerre.ataques.push(
@@ -221,7 +218,6 @@ function extraerAtaques(playerSelected) {
       ataques = Jugadores[i].ataques;
     }
   }
-  console.log(ataques);
   mostrarAtaques(ataques);
 }
 function mostrarAtaques(ataques) {
@@ -262,7 +258,7 @@ function aleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-//aca van los ataques(1)
+//aca van los ataques
 function disparar() {
   ataqueJugador = "DISPARO";
   ataqueEnemigoAleatorio();
@@ -436,7 +432,7 @@ function chequearColision(enemigo) {
     return;
   }
   stopMovement();
-  alert("Hay colision con:" + enemigo.nombre);
+  alert("Sale PVP contra " + enemigo.nombre);
   selectEnemy(enemigo);
 
   sectionVerMapa.style.display = "none";
@@ -486,8 +482,8 @@ function keyPressed(event) {
 }
 function iniciarMapa() {
   sectionVerMapa.style.display = "flex";
-  mapa.width = 490;
-  mapa.height = 450;
+  // mapa.width = 490;
+  // mapa.height = 450;
   miJugadorObjeto = obtenerObjetoJugador(playerSelected);
   //la funcion setInterval() hace que la funcion que este (dentro) se ejecute en un intervalo de los milisegundos indicados:
   intervalo = setInterval(pintarCanvas, 50);
