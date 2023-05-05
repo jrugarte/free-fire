@@ -23,6 +23,25 @@
     <section id="select-button">
       <button class="botones" id="Seleccionar">Seleccionar</button>
     </section>
+
+    <section id="ver-mapa">
+      <h1 class="title">🔥Ve hacia tu enemigo🔥</h1>
+      <canvas id="mapa"></canvas>
+      <div id="mover-mapa">
+        <button onmouseup="stopMovement()" onmousedown="moverIzquierda()">
+          ⬅️
+        </button>
+        <button onmouseup="stopMovement()" onmousedown="moverDerecha()">
+          ➡️
+        </button>
+        <button onmouseup="stopMovement()" onmousedown="moverArriba()">
+          ⬆️
+        </button>
+        <button onmouseup="stopMovement()" onmousedown="moverAbajo()">
+          ⬇️
+        </button>
+      </div>
+    </section>
     <section id="ataques">
       <p id="personaje-select">
         Seleccionaste a: <span id="personaje"> </span>
@@ -32,19 +51,17 @@
       </p>
       <p><strong>A JUGAR!</strong></p>
       <br />
-      <div id="div-botones">
-        <button class="botones" id="disparo-jugador">DISPARAR 🎯</button
-        ><span id="disparo"></span><br />
-        <button class="botones" id="granada-jugador">ESCAPAR 🏃🏽‍♂️</button
-        ><span id="granada"></span><br />
-        <button class="botones" id="tirar-pared">PONER PARED 🧊</button
-        ><span id="pared"></span><br />
-      </div>
+      <div id="div-botones"></div>
     </section>
 
     <div>
       <section id="texto-personajes">
-        <p id="resultado">🔥EXITOS🔥</p>
+        <p id="resultado">
+          El juego consiste en atacar al contrincante o defenderte del mismo con
+          los tres botones de arriba: Disparar, Escapar ó Poner pared. Asegurate
+          de elegir bien tu movimiento para poder ganar el PVP. <br />
+          🔥EXITOS🔥
+        </p>
         <section id="reiniciar-juego">
           <button id="reinicio">Volver a Jugar</button>
         </section>
